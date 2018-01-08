@@ -16,3 +16,6 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//Routa de acesso protegido de dados incorretos
+Route::middleware('auth:api')->get('/sintegra/es/{cnpj}', 'Api\Sintegra@getDados')->where('cnpj', '[0-9]+');

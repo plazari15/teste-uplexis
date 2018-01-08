@@ -18,5 +18,33 @@ window.Vue = require('vue');
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    delimiters: ["[[","]]"],
+    data: {
+      consultas: {}, cnpj: {}, retorno : {}
+
+    },
+    mounted(){
+        this.getConsultas();
+    },
+    methods: {
+        getConsultas() {
+            axios.get('/consultas').then(response => {
+                this.consultas = response.data;
+        })
+    },
+        Deletar(id){
+            axios.delete('/consulta/'+id).then(response => {
+                alert('Consulta excluída com sucesso');
+                this.getConsultas();
+        })
+        },
+        enviarRequisicao() {
+            axios.post('/sintegra/es/'+this.cnpj).then(response => {
+                alert('consulta cadastrada com sucesso!');
+                this.getConsultas();
+                this.retorno = response.data;
+        })
+        }
+    }
 });

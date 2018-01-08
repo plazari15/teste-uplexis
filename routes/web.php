@@ -12,5 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    return view('home');
+
 });
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/consultas', 'Sintegra@consultas');
+Route::delete('/consulta/{id}', 'Sintegra@deletarConsulta');
+Route::post('/sintegra/es/{cnpj}', 'Api\Sintegra@getDados')->where('cnpj', '[0-9]+');
