@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
 
-    return view('home');
+    return view('welcome');
 
 });
 
@@ -21,7 +21,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/consultas', 'Sintegra@consultas');
-Route::delete('/consulta/{id}', 'Sintegra@deletarConsulta');
-Route::post('/sintegra/es/{cnpj}', 'Api\Sintegra@getDados')->where('cnpj', '[0-9]+');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
+Route::get('/consultas', 'Sintegra@consultas')->middleware('auth');
+Route::delete('/consulta/{id}', 'Sintegra@deletarConsulta')->middleware('auth');
+Route::post('/sintegra/es/{cnpj}', 'Api\Sintegra@getDados')->where('cnpj', '[0-9]+')->middleware('auth');

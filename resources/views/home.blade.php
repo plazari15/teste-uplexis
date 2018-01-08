@@ -16,9 +16,9 @@
 
                     <h3>Nova consulta ao Sintegra</h3>
                         [[retorno.data]]
-                    <form>
-                        <input type="text" v-model="cnpj">
-                        <button type="submit" v-on:click="enviarRequisicao()">Consultar</button>
+                    <form onsubmit="return false">
+                        <input type="text" class="form-control" v-model="cnpj"><br>
+                        <button type="submit" class="btn btn-success" v-on:click="enviarRequisicao()">Consultar</button>
                     </form>
                 </div>
             </div>

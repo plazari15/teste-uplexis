@@ -993,7 +993,7 @@ var app = new Vue({
     el: '#app',
     delimiters: ["[[", "]]"],
     data: {
-        consultas: {}, cnpj: {}, retorno: {}
+        consultas: {}, cnpj: "", retorno: {}
 
     },
     mounted: function mounted() {
@@ -1024,6 +1024,7 @@ var app = new Vue({
                 _this3.getConsultas();
                 _this3.retorno = response.data;
             });
+            return false;
         }
     }
 });

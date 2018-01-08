@@ -21,7 +21,7 @@ const app = new Vue({
     el: '#app',
     delimiters: ["[[","]]"],
     data: {
-      consultas: {}, cnpj: {}, retorno : {}
+      consultas: {}, cnpj: "", retorno : {}
 
     },
     mounted(){
@@ -45,6 +45,7 @@ const app = new Vue({
                 this.getConsultas();
                 this.retorno = response.data;
         })
+            return false;
         }
     }
 });

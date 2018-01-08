@@ -31,7 +31,8 @@ class SintegraEs
                 ]
             ]);
 
-            $retorno =  utf8_decode(utf8_encode($sintegra->getBody()->getContents()));
+            $retorno =  $sintegra->getBody()->getContents();
+
 
             return str_replace('&nbsp;', '', $retorno);
         }catch (\Exception $e){
@@ -55,9 +56,8 @@ class SintegraEs
             foreach ($tableFirst as $tables){ //loop com as tabelas
                 foreach ($tables as $table) { //Loop para facilitar a busca de colunas
                     $tableCountTwo = preg_match_all('#<td[^>]*>(.*?)</td>#is', $table, $Column);
-
                     if(isset($Column[1][0]) && isset($Column[1][1])) { //Se der certo, vai pegar tudo que tiver indice
-                        $retornojSon[] = $Column[1][1];
+                        $retornojSon[utf8_decode($Column[1][0])] = utf8_decode($Column[1][1]);
                     }
                 }
             }
@@ -73,10 +73,15 @@ class SintegraEs
     }
 
     public function criaConsulta($cnpj){
-        return Sintegra::create([
+         $cria = Sintegra::create([
             'user_id' => Auth::user()->id,
             'cnpj' => $cnpj,
             'json' => $this->parseNaTabela($cnpj)
         ]);
+
+         if($cria){
+             return $cria->json;
+         }
+        return false;
     }
 }

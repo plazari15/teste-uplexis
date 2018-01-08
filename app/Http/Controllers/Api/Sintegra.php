@@ -22,7 +22,7 @@ class Sintegra extends Controller
        $resultado =  $busca->criaConsulta($cnpj);
 
        if($resultado){
-           return response()->json(['success' => true, 'data' => $resultado->json]);
+           return response()->json(['success' => true, 'data' => json_decode($resultado)]);
        }
 
     }
