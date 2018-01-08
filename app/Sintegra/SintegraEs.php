@@ -55,7 +55,7 @@ class SintegraEs
             foreach ($tableFirst as $tables){ //loop com as tabelas
                 foreach ($tables as $table) { //Loop para facilitar a busca de colunas
                     $tableCountTwo = preg_match_all('#<td[^>]*>(.*?)</td>#is', $table, $Column);
-                    
+
                     if(isset($Column[1][0]) && isset($Column[1][1])) { //Se der certo, vai pegar tudo que tiver indice
                         $retornojSon[] = $Column[1][1];
                     }

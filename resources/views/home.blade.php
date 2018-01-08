@@ -15,9 +15,7 @@
                     @endif
 
                     <h3>Nova consulta ao Sintegra</h3>
-                        <ul v-for="ret in retorno.data">
-                            <li></li>
-                        </ul>
+                        [[retorno.data]]
                     <form>
                         <input type="text" v-model="cnpj">
                         <button type="submit" v-on:click="enviarRequisicao()">Consultar</button>
