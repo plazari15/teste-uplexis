@@ -1,0 +1,97 @@
+{
+	"info": {
+		"name": "Sintegra",
+		"_postman_id": "c10f2290-450a-b70f-2db2-f134526f4e63",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Gera Token ",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "2",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "0VSmDJzPITBE2nj7nq3kFqDShrpMSsiVFw37Wcpa",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "plazari96@gmail.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/oauth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"oauth",
+						"token"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Requisita Sintegra",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImY4OWM1NTA2ODljOWRmMmI5ZTdjNTNjNGQ1NjRlYzI0NDY1ZTliMWI4M2RjMGM1ZDUwOTdlOTNlMzUzYzNkMWQyZmI1YzdhZWZjMWVmOTZiIn0.eyJhdWQiOiIyIiwianRpIjoiZjg5YzU1MDY4OWM5ZGYyYjllN2M1M2M0ZDU2NGVjMjQ0NjVlOWIxYjgzZGMwYzVkNTA5N2U5M2UzNTNjM2QxZDJmYjVjN2FlZmMxZWY5NmIiLCJpYXQiOjE1MTUzODE3NjUsIm5iZiI6MTUxNTM4MTc2NSwiZXhwIjoxNTE2Njc3NzY0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.L56eaCeYUhEylYsi4lLOyqxk--DsvURk3BXONo09R5Bf9mAUHJkeqcFqa6FA_qq00bfkTo4r39X3lT_h0SOPCf2c6_8UYeyIleyXs7elLWFZdk00jNi3iwKe4x40Lm0m3_wFyMFGJTvV4O9UHbB2v5oxNQkKB5MqxX6b3ZPpPcTs_ug-9gQ-RkKHN3r6QoUw-SAvFQGPJaq2J7aLMH2z0EU1HnlAY0gDDrp8Z1V6ZxJcps2NSWP4VPA0sG6ru2dIb8RW8LNW1Y4nQRvDve32FiMmkCOIVxZNasopTmKNuMiHOTqDAqf-s4t-bWEht42MD-1cSgollbwTrioXaOUSdpDlpi1N6ZWrmbnguiYP598KfLyq0mdnpBr_jjMnCPYVuDDXINVVa9Qmuh_POxv97QZvWeq4x6iA7Oc2IyuHDP4krEUUoCoM478ecbvYESAD7CV0I1RNC4EeX-3iB0isc87JK8MIQBN5Bj_UopBZikjyHw9o5CXSlA2UX0UTouuaVaaP5i_ODy55cYfi-b2OTlvNV6FITJn8CTRkxoDHrHUDjuEZeeAjTG-lRhG8WvAK9UY_eIvN5amMOvLCpX1AAh-usCCyPQA_GTbQg8r98GYTp29LdGz60ehXwxCsbDVI5fAy8XDCgFplCS6IivuUE6nVvWPC_JLjrDEIwQalzeI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost/api/sintegra/es/31804115000243",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"sintegra",
+						"es",
+						"31804115000243"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
